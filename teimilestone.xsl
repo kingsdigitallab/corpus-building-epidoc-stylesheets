@@ -34,4 +34,11 @@
          </xsl:call-template>
       </xsl:if>
   </xsl:template>
+   
+   <xsl:template match="t:milestone[@unit = 'face']">
+      <span class="textpartnumber">
+         <xsl:text>face </xsl:text>
+         <xsl:value-of select="@n"/>
+      </span>
+   </xsl:template>
 </xsl:stylesheet>
