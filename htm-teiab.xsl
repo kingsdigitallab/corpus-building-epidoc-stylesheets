@@ -22,7 +22,7 @@
                    </xsl:for-each>
                 </xsl:variable>
                 <xsl:attribute name="id">
-                   <xsl:value-of select="concat('div',$div-loc)"/>
+                   <xsl:value-of select="concat('div', $div-loc, '-', $parm-edition-type)"/>
                 </xsl:attribute>
              </xsl:if>
              <xsl:apply-templates/>
