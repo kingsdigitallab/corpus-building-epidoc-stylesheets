@@ -16,9 +16,9 @@
     <value>edh-names</value>
     <value>edh-web</value> 
     <value>ila</value>
-    <value>iospe</value>
+    <value on="yes">iospe</value>
     <value>london</value>
-    <value on="yes">panciera</value>
+    <value>panciera</value>
     <value>petrae</value>
     <value>rib</value>
     <value>seg</value>
@@ -45,29 +45,29 @@
   
   <parameter>
     <name>verse-lines</name>
-    <value on="yes">off</value><!-- print epigraphic lines at all times, whether text in ab or lg/l -->
-    <value>on</value><!-- print verse lines when text in lg/l; interpret gaps as metre where so tagged -->
+    <value>off</value><!-- print epigraphic lines at all times, whether text in ab or lg/l -->
+    <value on="yes">on</value><!-- print verse lines when text in lg/l; interpret gaps as metre where so tagged -->
   </parameter>
   
   <parameter>
     <name>edition-type</name>
     <value on="yes">interpretive</value>
-    <value>diplomatic</value>
+    <value on="yes">diplomatic</value>
   </parameter>
   
   <parameter>
     <name>internal-app-style</name>
-    <value on="yes">none</value>
+    <value>none</value>
     <value>ddbdp</value><!-- NB: change this parameter locally if you're running PN or SoSOL process! -->
     <value>iospe</value>
-    <value>fullex</value> <!--this example uses all the currently specified internal apparatus features-->
-<value>minex</value> <!--this is the same as above but only uses some common examples-->
+    <value on="yes">fullex</value> <!--this example uses all the currently specified internal apparatus features-->
+    <value>minex</value> <!--this is the same as above but only uses some common examples-->
   </parameter>
   
   <parameter>
     <name>external-app-style</name>
-    <value on="yes">default</value>
-    <value>iospe</value>
+    <value>default</value>
+    <value on="yes">iospe</value>
   </parameter>
   
   <parameter><!-- DEPRECATED -->
@@ -96,7 +96,7 @@
   
   <parameter> <!--the key of the library-->
     <name>ZoteroKey</name>
-    <value on="yes">247748</value><!--EAGLE open group bibliography-->
+    <value on="yes">382445</value>
     <value>epidig</value> <!--sample value-->
   </parameter>
   
@@ -116,7 +116,7 @@
   <!-- Line-numbering increment -->
   <parameter>
     <name>line-inc</name>
-    <value>5</value>
+    <value>1</value>
   </parameter>
   
   <parameter>
@@ -131,12 +131,12 @@
   
   <parameter>
     <name>glyph-variant</name>
-    <value on="yes">standard</value>
+    <value>standard</value>
     <value>simplified</value>
     <value>glyph-display</value>
     <value>text-display</value>
     <value>g-london</value>
-    <value>g-iospe</value>
+    <value on="yes">g-iospe</value>
     <value>g-ddbdp</value>
     <value>g-rib</value>
     <value>g-creta</value>
