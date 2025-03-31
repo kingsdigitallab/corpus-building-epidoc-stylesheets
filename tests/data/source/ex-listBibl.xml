@@ -52,16 +52,7 @@
     <text>
         <body>
             <div type="edition" xml:space="preserve">
-                <ab>
-                    <lb n="1"/>ex. 1 (GL): – abc<milestone n="23" ed="La" unit="Dreissiger"/>def
-                    <lb n="2"/>ex. 2 (GL): –  abc<milestone n="24" ed="AV" unit="verse"/>def
-                    <lb n="3"/>ex. 3 (fragment) – abc<milestone unit="fragment"/>def
-                    <lb n="4"/>ex. 4 (bloc) – abc<milestone unit="block"/>def
-                    <lb n="5"/>ex. 5 (unnumbered) – abc<milestone unit="unnumbered"/>def
-                    <lb n="6"/>ex. 6 (fragment with @n) – abc<milestone unit="fragment" n="2"/>def
-                    <lb n="7"/>ex. 7 (inword fragment) – <w>abc<milestone unit="fragment" n="1"/>def</w>
-                    <lb n="8"/>ex. 8 (inword block) – <w>abc<milestone unit="block" n="1"/>def</w>
-                </ab>
+                <ab> text here</ab>
             </div>
             <div type="apparatus">
                 <p>external apparatus criticus (if applicable)</p>
@@ -73,7 +64,11 @@
                 <p>commentary</p>
             </div>
             <div type="bibliography">
-                <p>bibliography of previous editions, discussion, etc.</p>
+                <listBibl>
+                    <bibl>ref1</bibl>
+                    <bibl>ref2</bibl>
+                    <bibl>ref3</bibl>
+                </listBibl>
             </div>
         </body>
     </text>
