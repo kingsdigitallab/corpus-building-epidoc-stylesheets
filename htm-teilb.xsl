@@ -128,7 +128,7 @@
             <xsl:choose>
                     <!-- replaced test using generate-id() with 'is' -->
                     <xsl:when test="self::t:lb is ancestor::t:div[1]/t:*[child::t:lb][1]/t:lb[1]">
-                        <a id="a{$div-loc}l{$line}">
+                        <a id="a{$div-loc}l{$line}-{$parm-edition-type}">
                             <xsl:comment>0</xsl:comment>
                         </a><xsl:if test="@rend">
                             <span>
@@ -174,7 +174,7 @@
                         </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
-                        <br id="a{$div-loc}l{$line}"/>
+                        <br id="a{$div-loc}l{$line}-{$parm-edition-type}"/>
                         <xsl:if test="@rend">
                             <span>
                                 <xsl:if test="@rend">
