@@ -5,7 +5,12 @@
 
     <xsl:template match="t:listBibl">
         <ul>
-            <xsl:apply-templates/>
+            <xsl:for-each select="t:bibl">
+                <xsl:sort select="t:date" />
+                <li>
+                    <xsl:apply-templates/>
+                </li>
+            </xsl:for-each>
         </ul>
     </xsl:template>
 
