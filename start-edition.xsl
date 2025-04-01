@@ -2,7 +2,7 @@
 <!-- $Id$ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:t="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="t" version="2.0">
+    exclude-result-prefixes="#all" version="2.0">
     <xsl:output method="xml" encoding="UTF-8"/>
 
     <xsl:include href="global-varsandparams.xsl"/>
@@ -24,7 +24,7 @@
     <xsl:include href="htm-teilb.xsl"/>
     <xsl:include href="htm-teilgandl.xsl"/>
     <xsl:include href="htm-teilistanditem.xsl"/>
-    <xsl:include href="htm-teilistbiblandbibl.xsl"/>
+    <!--<xsl:include href="htm-teilistbiblandbibl.xsl"/>-->
     <xsl:include href="htm-teimilestone.xsl"/>
     <xsl:include href="htm-teibibl.xsl"/>
     <xsl:include href="htm-teinote.xsl"/>
