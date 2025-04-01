@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id$ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:t="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="t" version="2.0">
+   xmlns:t="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
+   exclude-result-prefixes="#all" version="2.0">
    <!-- Contains named templates for default file structure (aka "metadata" aka "supporting data") -->
 
    <!-- Specific named templates for HGV, InsLib, RIB, IOSPE, EDH, etc. are found in:
@@ -57,6 +58,16 @@
       <xsl:variable name="doc-without-edition">
          <xsl:apply-templates mode="strip-edition"/>
       </xsl:variable>
+      <xsl:variable name="chardecl">
+         <xsl:choose>
+            <xsl:when test="//t:charDecl">
+               <xsl:sequence select="//t:charDecl"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:apply-templates mode="chardecl"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
 
       <!-- Main text output -->
       <xsl:variable name="maintxt">
@@ -64,11 +75,13 @@
             <xsl:for-each select="$parm-edition-type">
                <xsl:apply-templates select="$edition/node()">
                   <xsl:with-param name="parm-edition-type" select="." tunnel="yes"/>
+                  <xsl:with-param name="chardecl" select="$chardecl/node()" tunnel="yes"/>
                </xsl:apply-templates>
             </xsl:for-each>
          </div>
          <xsl:apply-templates select="$doc-without-edition/node()"/>
       </xsl:variable>
+
       <!-- Moded templates found in htm-tpl-sqbrackets.xsl -->
       <xsl:variable name="maintxt2">
          <xsl:apply-templates select="$maintxt" mode="sqbrackets"/>
@@ -113,4 +126,12 @@
    </xsl:template>
 
    <xsl:template match="t:div[@type = 'edition']" mode="strip-edition"/>
+
+   <xsl:template match="node()" mode="chardecl">
+      <xsl:apply-templates mode="chardecl"/>
+   </xsl:template>
+
+   <xsl:template match="xi:include" mode="chardecl">
+      <xsl:copy-of select="document(@href)"/>
+   </xsl:template>
 </xsl:stylesheet>
