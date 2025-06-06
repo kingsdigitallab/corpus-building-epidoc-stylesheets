@@ -43,6 +43,7 @@
     <xsl:include href="teihandshift.xsl"/>
     <xsl:include href="teiheader.xsl"/>
     <xsl:include href="teimilestone.xsl"/>
+    <xsl:include href="teiname.xsl"/>
     <xsl:include href="teiorig.xsl"/>
     <xsl:include href="teiorigandreg.xsl"/>
     <xsl:include href="teiq.xsl"/>
