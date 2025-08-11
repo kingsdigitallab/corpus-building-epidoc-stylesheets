@@ -139,6 +139,36 @@
                                 <xsl:text>&#xa0;&#xa0;←</xsl:text>
                             </span>
                         </xsl:when>
+                        <xsl:when test="$prevLb/@style = 'text-direction:spiral-clockwise'">
+                            <span class="tei text-direction l-to-r">
+                                <xsl:text>&#xa0;&#xa0;↻</xsl:text>
+                            </span>
+                        </xsl:when>
+                        <xsl:when test="$prevLb/@style = 'text-direction:circular-clockwise'">
+                            <span class="tei text-direction r-to-l">
+                                <xsl:text>&#xa0;&#xa0;↻</xsl:text>
+                            </span>
+                        </xsl:when>
+                        <xsl:when test="$prevLb/@style = 'text-direction:spiral-anticlockwise'">
+                            <span class="tei text-direction l-to-r">
+                                <xsl:text>&#xa0;&#xa0;↺</xsl:text>
+                            </span>
+                        </xsl:when>
+                        <xsl:when test="$prevLb/@style = 'text-direction:circular-anticlockwise'">
+                            <span class="tei text-direction r-to-l">
+                                <xsl:text>&#xa0;&#xa0;↺</xsl:text>
+                            </span>
+                        </xsl:when>
+                        <xsl:when test="$prevLb/@style = 'text-direction:upwards'">
+                            <span class="tei text-direction l-to-r">
+                                <xsl:text>&#xa0;&#xa0;↑</xsl:text>
+                            </span>
+                        </xsl:when>
+                        <xsl:when test="$prevLb/@style = 'text-direction:downwards'">
+                            <span class="tei text-direction r-to-l">
+                                <xsl:text>&#xa0;&#xa0;↓</xsl:text>
+                            </span>
+                        </xsl:when>
                     </xsl:choose>
                 </xsl:if>
 
