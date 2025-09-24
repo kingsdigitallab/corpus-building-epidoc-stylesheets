@@ -41,6 +41,11 @@
                     </xsl:otherwise>
                   </xsl:choose>
                 </xsl:for-each>
+                <xsl:if test="@source">
+                  <a class="translation-source" href="{@source}">
+                    <xsl:value-of select="@source"/>
+                  </a>
+                </xsl:if>
               </p>
           </xsl:when>
           <xsl:otherwise>
