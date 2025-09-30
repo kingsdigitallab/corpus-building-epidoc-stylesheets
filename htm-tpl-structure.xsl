@@ -51,6 +51,12 @@
          </h1>
       </xsl:if>
 
+      <xsl:variable name="resp-stmt">
+         <xsl:sequence select="//t:respStmt" />
+      </xsl:variable>
+      <xsl:variable name="autopsy">
+         <xsl:sequence select="//t:provenance[@xml:id = 'autopsy']" />
+      </xsl:variable>
       <xsl:variable name="edition">
          <xsl:sequence select="//t:div[@type = 'edition']"/>
       </xsl:variable>
@@ -76,6 +82,8 @@
                <xsl:apply-templates select="$edition/node()">
                   <xsl:with-param name="parm-edition-type" select="." tunnel="yes"/>
                   <xsl:with-param name="chardecl" select="$chardecl/node()" tunnel="yes"/>
+                  <xsl:with-param name="parm-resp-stmt" select="$resp-stmt/node()" tunnel="yes"/>
+                  <xsl:with-param name="parm-autopsy"  select="$autopsy/node()" tunnel="yes"/>
                </xsl:apply-templates>
             </xsl:for-each>
          </div>

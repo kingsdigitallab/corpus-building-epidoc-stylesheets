@@ -10,6 +10,37 @@
       <xsl:param name="parm-edition-type" tunnel="yes" required="no"/>
       <xsl:param name="parm-internal-app-style" tunnel="yes" required="no"/>
       <xsl:param name="parm-external-app-style" tunnel="yes" required="no"/>
+      <xsl:param name="parm-resp-stmt" tunnel="yes" required="no"/>
+      <xsl:param name="parm-autopsy" tunnel="yes" required="no"/>
+      
+      <xsl:if test="@resp">
+         <div class="attribution">
+            <xsl:text>Text encoding: </xsl:text>
+            <xsl:for-each select="tokenize(@resp, ' ')">
+               <xsl:variable name="resp" select="normalize-space(.)"/>
+               <xsl:value-of
+                  select="$parm-resp-stmt//t:name[@xml:id = substring-after($resp, '#')]"/>
+               <xsl:if test="position() != last()">
+                  <xsl:text>, </xsl:text>
+               </xsl:if>
+            </xsl:for-each>
+            <xsl:text>, edition source: </xsl:text>
+            <xsl:choose>
+               <xsl:when test="@source = '#autopsy'">
+                  autopsy
+                  <xsl:value-of select="$parm-autopsy"/>
+               </xsl:when>
+               <xsl:when test="starts-with(@source, 'http')">
+                  <a href="{@source}">
+                     <xsl:value-of select="@source"/>
+                  </a>
+               </xsl:when>
+               <xsl:when test="@source = '#image'">
+                  <xsl:text>image</xsl:text>
+               </xsl:when>
+            </xsl:choose>
+         </div>
+      </xsl:if>
 
       <div>
          <xsl:attribute name="id">
