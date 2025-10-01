@@ -21,7 +21,7 @@
                <xsl:value-of
                   select="$parm-resp-stmt//t:name[@xml:id = substring-after($resp, '#')]"/>
                <xsl:if test="position() != last()">
-                  <xsl:text>, </xsl:text>
+                  <xsl:text>; </xsl:text>
                </xsl:if>
             </xsl:for-each>
             <xsl:text>, edition source: </xsl:text>
