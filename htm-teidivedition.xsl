@@ -22,11 +22,11 @@
                   <xsl:value-of
                      select="$parm-resp-stmt//t:name[@xml:id = substring-after($resp, '#')]"/>
                   <xsl:if test="position() != last()">
-                     <xsl:text>; </xsl:text>
+                     <xsl:text>, </xsl:text>
                   </xsl:if>
                </xsl:for-each>
                <xsl:if test="@source">
-                  <xsl:text>, edition source: </xsl:text>
+                  <xsl:text>; edition source: </xsl:text>
                   <xsl:choose>
                      <xsl:when test="@source = '#autopsy'"> autopsy <xsl:value-of
                            select="$parm-autopsy"/>
