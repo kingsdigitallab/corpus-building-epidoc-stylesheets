@@ -52,10 +52,10 @@
       </xsl:if>
 
       <xsl:variable name="resp-stmt">
-         <xsl:sequence select="//t:respStmt" />
+         <xsl:sequence select="//t:respStmt"/>
       </xsl:variable>
       <xsl:variable name="autopsy">
-         <xsl:sequence select="//t:provenance[@xml:id = 'autopsy']" />
+         <xsl:sequence select="//t:provenance[@xml:id = 'autopsy']"/>
       </xsl:variable>
       <xsl:variable name="edition">
          <xsl:sequence select="//t:div[@type = 'edition']"/>
@@ -83,7 +83,7 @@
                   <xsl:with-param name="parm-edition-type" select="." tunnel="yes"/>
                   <xsl:with-param name="chardecl" select="$chardecl/node()" tunnel="yes"/>
                   <xsl:with-param name="parm-resp-stmt" select="$resp-stmt/node()" tunnel="yes"/>
-                  <xsl:with-param name="parm-autopsy"  select="$autopsy/node()" tunnel="yes"/>
+                  <xsl:with-param name="parm-autopsy" select="$autopsy/node()" tunnel="yes"/>
                </xsl:apply-templates>
             </xsl:for-each>
          </div>
@@ -95,6 +95,12 @@
          <xsl:apply-templates select="$maintxt" mode="sqbrackets"/>
       </xsl:variable>
       <xsl:apply-templates select="$maintxt2" mode="sqbrackets"/>
+
+      <xsl:if test="//t:handDesc/t:handNote/text()">
+         <div id="handnote">
+            <xsl:apply-templates select="//t:handDesc/t:handNote"/>
+         </div>
+      </xsl:if>
 
       <!-- Found in htm-tpl-license.xsl -->
       <xsl:call-template name="license"/>
