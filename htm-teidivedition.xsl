@@ -55,9 +55,9 @@
          <xsl:attribute name="id">
             <xsl:text>edition-</xsl:text>
             <xsl:value-of select="$parm-edition-type"/>
-            <xsl:if test="@subtype and lower-case(@subtype) != 'transcription'">
+            <xsl:if test="@subtype and lower-case(@subtype) != 'primary'">
                <xsl:text>-</xsl:text>
-               <xsl:value-of select="@subtype"/>
+               <xsl:value-of select="replace(@subtype, '-primary', '')"/>
             </xsl:if>
          </xsl:attribute>
 
